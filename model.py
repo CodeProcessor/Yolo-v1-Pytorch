@@ -108,7 +108,7 @@ class YoloV1(nn.Module):
 
 
 def test():
-    model = YoloV1(split_size=7, num_boxes=1, num_classes=5).to(device=DEVICE)
+    model = YoloV1(input_channels=3, split_size=7, num_boxes=1, num_classes=1).to(device=DEVICE)
     input_shape = (448, 448)
     x = torch.randn(2, 3, input_shape[0], input_shape[1], device=DEVICE)
     print(model(x).shape)
